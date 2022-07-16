@@ -22,6 +22,12 @@
 
 <body>
 
+    <script>
+        function msg(s){
+            alert(s);
+        }
+    </script>
+
     <!-- navbar -->
     <header>
         <nav class="navbar">
@@ -32,7 +38,6 @@
             <div class="navlinks">
                 <ul class="link-items">
                     <a href="index.jsp">
-
                         <li class="link-item">Home</li>
                     </a>
                     <li class="link-item">About Us</li>
@@ -53,7 +58,7 @@
            
            if("valid".equals(msg)){
            %>
-           <h3>Registration is Successful.</h3>
+           <script>msg("Registration Successful.")</script>
            <%
             }
         %>
@@ -61,7 +66,7 @@
         <% 
            if("invalid".equals(msg)){
            %>
-           <h3>Password Mismatch.</h3>
+           <script>msg("Password Mismatch.")</script>
            <%
             }
         %>
@@ -69,14 +74,14 @@
         <% 
            if("exist".equals(msg)){
            %>
-           <h3>Email Already exist.</h3>
+                <script>msg("Email Already exist.")</script>
            <%
             }
         %>
         <% 
            if("lenProblem".equals(msg)){
            %>
-           <h3>Password Must be of length 6 or greater.</h3>
+                <script>msg("Password Must be of length 6 or greater.")</script>
            <%
             }
         %>
@@ -119,12 +124,6 @@
                         <button class="btn" id="register">Register</button>
                     </div>
                 </form>
-<!--                <a href="./userDash.jsp">
-                    <button class="btn">dashboard</button>
-                </a>
-                <a href="./adminDash.jsp">
-                    <button class="btn">Admin dashboard</button>
-                </a>-->
             </div>
         </div>
 

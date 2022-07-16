@@ -21,6 +21,12 @@
 </head>
 
 <body>
+
+    <script>
+        function msg(s){
+            alert(s);
+        }
+    </script>
     <!-- navbar -->
     <header>
         <nav class="navbar">
@@ -53,13 +59,16 @@
 
                     if("invalid".equals(msg)){
                     %>
-                    <h3>Blood Group can't be Updated.</h3>
+                    <script>
+                        msg("Blood Group can't be updated.")
+                    </script>
                     <%
                      }
                     else{
                         %>
-                    
-                        <h3>Blood Group Updated Successfully.</h3>
+                        <script>
+                            msg("Blood Group Updated Successfully")
+                        </script>
                         <%
                     }
                  %>
