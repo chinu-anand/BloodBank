@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+
+    background-size: cover;
+    background-image: url("./images/bloodbank-home.jpg");
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    background-color: white;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    padding-left: 1.5rem;
+    justify-content: flex-start;
+    width: 25%;
+
+    @media screen and (max-width:360px) {
+        width: 40%;
+    }
+}
+
+.logo img {
+    width: 15%;
+    border-radius: 999px;
+}
+
+.logo h3 {
+    /* font-family: 'Open Sans', sans-serif; */
+    margin-left: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.navlinks {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    align-items: flex-end;
+}
+
+.link-items {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+}
+
+.link-items a {
+    color: black;
+    text-decoration: none;
+}
+
+.link-items a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.link-item {
+    padding: 0 1.5rem;
+}
+
+.link-item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #F14430;
+    font-weight: bolder;
+}
+
+.intro {
+    position: relative;
+    background-color: white;
+    padding: 0.75rem;
+    width: 400px;
+    height: 150px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    left: 10vh;
+    top: 60vh;
+}
+
+.intro p {
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.intro span {
+    font-size: 28px;
+    color: #F14430;
+}
