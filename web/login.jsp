@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : Jul 15, 2022, 6:44:18 PM
-    Author     : Suraj
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">

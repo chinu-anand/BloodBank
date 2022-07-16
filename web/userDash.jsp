@@ -23,6 +23,11 @@
 </head>
 
 <body>
+    <script>
+        function msg(s){
+            alert(s);
+        }
+    </script>
     <!-- navbar -->
     <header>
         <nav class="navbar">
@@ -55,20 +60,19 @@
 
                     if("invalid".equals(msg)){
                     %>
-                    <h3>Oops Please try again.</h3>
+                    <script>msg("Oops, Please try again.")</script>
                     <%
                      }
                     else if("valid".equals(msg)){
                         %>
-                    
-                        <h3>Request sent successfully.</h3>
+                        <script>msg("Request sent successfully.")</script>
                         <%
                     }
                  %>
             <!-- Application Atatus -->
             <div class="status">
                 <h3>Application Status</h3>
-                <div class="table">
+                <div class="table-status">
                     <table
                     <tr><th>Blood Group</th>
                             <th>Units</th>
@@ -87,28 +91,13 @@
                         </tr>
                         <% }
                         %>
-<!--                    <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                            <td>Rejected</td>
-                        </tr>
-                    <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                            <td>Accepted</td>
-                        </tr>
-                    <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                            <td>Pending</td>
-                        </tr>-->
                         </table>
                 </div>
             </div>
             <!-- Availablity Chart -->
             <div class="chart">
                 <h3>Availablity Chart</h3>
-                <div class="table">
+                <div class="table-chart">
                     <table>
                         <tr>
                             <th>Group</th>
@@ -125,35 +114,6 @@
                         </tr>
                         <% }
                         %>
-                        
-<!--                        <tr>
-                            <td>A-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>B+</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>O+</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>O-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>AB+</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>AB-</td>
-                            <td>0</td>
-                        </tr>-->
                     </table>
                 </div>
             </div>
