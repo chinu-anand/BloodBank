@@ -17,16 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Register.css">
     <link rel="icon" type="image/x-icon" href="./images/bloodbank.png">
+    
     <title>Register</title>
 </head>
 
 <body>
-
-    <script>
-        function msg(s){
-            alert(s);
-        }
-    </script>
 
     <!-- navbar -->
     <header>
@@ -59,7 +54,13 @@
            
            if("valid".equals(msg)){
            %>
-           <script>msg("Registration is Successful.")</script>
+           
+           <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Registration is Successful.");
+                            }, 500); 
+                </script>
+           
            <%
             }
         %>
@@ -67,7 +68,11 @@
         <% 
            if("invalid".equals(msg)){
            %>
-           <script>msg("Password Mismatch.")</script>
+           <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Password Mismatch!!!");
+                            }, 500); 
+                </script>
            <%
             }
         %>
@@ -75,14 +80,26 @@
         <% 
            if("exist".equals(msg)){
            %>
-           <script>msg("Email Already exist.")</script>
+         
+
+                <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Email Already Exist!!!");
+                            }, 500); 
+                </script>
+           
            <%
             }
         %>
         <% 
            if("lenProblem".equals(msg)){
            %>
-           <script>msg("Password Must be of length 6 or greater.")</script>
+           <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Password Must be of length 6 or greater.");
+                            }, 500); 
+                </script>
+         
            <%
             }
         %>
@@ -125,6 +142,12 @@
                         <button class="btn" id="register">Register</button>
                     </div>
                 </form>
+<!--                <a href="./userDash.jsp">
+                    <button class="btn">dashboard</button>
+                </a>
+                <a href="./adminDash.jsp">
+                    <button class="btn">Admin dashboard</button>
+                </a>-->
             </div>
         </div>
 
@@ -132,7 +155,9 @@
             <img src="./images/register.png" alt="register-illustration">
         </div>
     </div>
+
     <!-- Register Body Area Finish -->
+   
 
 </body>
 

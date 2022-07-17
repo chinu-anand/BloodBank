@@ -21,12 +21,7 @@
 </head>
 
 <body>
-
-    <script>
-        function msg(s){
-            alert(s);
-        }
-    </script>
+      
     <!-- navbar -->
     <header>
         <nav class="navbar">
@@ -59,16 +54,22 @@
 
                     if("invalid".equals(msg)){
                     %>
-                    <script>
-                        msg("Blood Group can't be updated.")
-                    </script>
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Oops Please try again.!!!");
+                            }, 500); 
+                </script>
+                    
                     <%
                      }
                     else{
                         %>
-                        <script>
-                            msg("Blood Group Updated Successfully")
-                        </script>
+                        
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Blood Bank Updated Successfully..");
+                            }, 500); 
+                </script>
                         <%
                     }
                  %>
@@ -117,6 +118,8 @@
         </div>
         <!-- Dashboard Area Finish -->
     </div>
+        
+
 
 </body>
 

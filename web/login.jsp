@@ -1,3 +1,9 @@
+<%-- 
+    Document   : login
+    Created on : Jul 15, 2022, 6:44:18 PM
+    Author     : Suraj
+--%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +21,7 @@
 </head>
 
 <body>
-
+        
     <!-- navbar -->
     <header>
         <nav class="navbar">
@@ -49,7 +55,11 @@
 
                     if("invalid".equals(msg)){
                     %>
-                    <h1>Email or Password wrong.</h1>
+                    <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Email or Password Wrong!!!");
+                            }, 500); 
+                </script>
                     <%
                      }
                  %>
@@ -70,6 +80,7 @@
     </div>
 
     <!-- login form finish -->
+   
 
 </body>
 

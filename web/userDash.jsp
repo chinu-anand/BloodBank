@@ -23,11 +23,8 @@
 </head>
 
 <body>
-    <script>
-        function msg(s){
-            alert(s);
-        }
-    </script>
+    
+  
     <!-- navbar -->
     <header>
         <nav class="navbar">
@@ -60,23 +57,34 @@
 
                     if("invalid".equals(msg)){
                     %>
-                    <script>msg("Oops, Please try again.")</script>
+                    <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Oops Please try again.!!!");
+                            }, 500); 
+                </script>
                     <%
                      }
                     else if("valid".equals(msg)){
                         %>
-                        <script>msg("Request sent successfully.")</script>
+                         <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Request sent successfully..");
+                            }, 500); 
+                </script>
+                        
                         <%
                     }
                  %>
             <!-- Application Atatus -->
+
             <div class="status">
                 <h3>Application Status</h3>
-                <div class="table-status">
-                    <table
-                    <tr><th>Blood Group</th>
-                            <th>Units</th>
-                            <th>Status</th>
+                <div class="table">
+                    <table>
+                    <tr>
+                        <th>Blood Group</th>
+                        <th>Units</th>
+                        <th>Status</th>
                     </tr>
                     
                     <%
@@ -85,19 +93,34 @@
                             ResultSet resultset = statement.executeQuery("select * from bloodrequest where email='"+(String)session.getAttribute("username")+"'");
                             while(resultset.next()){ %>
                          <tr>
-                             <td style="color:orangered"><%=resultset.getString("Bloodgroup")%></td>
+                             <td style="color:orangered "><%=resultset.getString("Bloodgroup")%></td>
                             <td style="color:orangered"><%=resultset.getString("units")%></td>
                             <td style="color:orangered"><%=resultset.getString("cur_status")%></td>
                         </tr>
                         <% }
                         %>
+<!--                    <tr>
+                            <td>B-</td>
+                            <td>0</td>
+                            <td>Rejected</td>
+                        </tr>
+                    <tr>
+                            <td>B-</td>
+                            <td>0</td>
+                            <td>Accepted</td>
+                        </tr>
+                    <tr>
+                            <td>B-</td>
+                            <td>0</td>
+                            <td>Pending</td>
+                        </tr>-->
                         </table>
                 </div>
             </div>
             <!-- Availablity Chart -->
             <div class="chart">
                 <h3>Availablity Chart</h3>
-                <div class="table-chart">
+                <div class="table">
                     <table>
                         <tr>
                             <th>Group</th>
@@ -114,6 +137,35 @@
                         </tr>
                         <% }
                         %>
+                        
+<!--                        <tr>
+                            <td>A-</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>B+</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>O+</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>O-</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>AB+</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>AB-</td>
+                            <td>0</td>
+                        </tr>-->
                     </table>
                 </div>
             </div>
@@ -157,7 +209,7 @@
         <!-- Apply Area Finish -->
 
     </div>
-
+                
 </body>
 
 </html>

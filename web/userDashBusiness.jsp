@@ -23,6 +23,10 @@
             System.out.println(status);
             
              try{
+             
+                if((String)session.getAttribute("username")==null){
+                    int y=1/0;
+                }
                
                 Connection con = MySqlConnector.getCon();
                 
