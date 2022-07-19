@@ -111,21 +111,6 @@
                         </tr>
                         <% }
                         %>
-<!--                    <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                            <td>Rejected</td>
-                        </tr>
-                    <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                            <td>Accepted</td>
-                        </tr>
-                    <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                            <td>Pending</td>
-                        </tr>-->
                         </table>
                 </div>
             </div>
@@ -149,35 +134,6 @@
                         </tr>
                         <% }
                         %>
-                        
-<!--                        <tr>
-                            <td>A-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>B+</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>B-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>O+</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>O-</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>AB+</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <td>AB-</td>
-                            <td>0</td>
-                        </tr>-->
                     </table>
                 </div>
             </div>

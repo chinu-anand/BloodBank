@@ -155,7 +155,6 @@ body {
     height: 300px;
     display: flex;
     justify-content: space-between;
-    /* border-color: red; */
 }
 
 table, tr{
