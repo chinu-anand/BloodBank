@@ -34,7 +34,7 @@
             </div>
             <div class="navlinks">
                 <ul class="link-items">
-                    <li class="link-item">My Profile</li>
+                    
                     <a href="LogoutBusiness.jsp">
                         <li class="link-item">Log Out</li>
                     </a>
@@ -52,6 +52,18 @@
             <div class="image-container">
                 <img src="./images/user.png" alt="userDash">
             </div>
+            <%
+            if((String)session.getAttribute("username")==null){
+            %>
+                <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Please Login to see userDAsh Board page!!!");
+                            }, 500); 
+                </script>
+            <%
+            }
+            else{
+            %>
              <%
                     String msg = request.getParameter("msg");
 
@@ -207,7 +219,8 @@
         </div>
 
         <!-- Apply Area Finish -->
-
+        <%
+            }%>
     </div>
                 
 </body>

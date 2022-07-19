@@ -4,6 +4,8 @@
     Author     : Suraj
 --%>
 
+<%@page import="Packages.MySqlConnector"%>
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +33,7 @@
             </div>
             <div class="navlinks">
                 <ul class="link-items">
-                    <li class="link-item">My Profile</li>
+                   
                     <a href="LogoutBusiness.jsp">
                         <li class="link-item">Log Out</li>
                     </a>
@@ -50,6 +52,18 @@
             <img src="./images/admin.png" alt="admin">
         </div>
         <%
+            if((String)session.getAttribute("username")==null){
+            %>
+                <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Please Login to see admin page!!!");
+                            }, 500); 
+                </script>
+            <%
+            }
+            else{
+            %>
+        <%
                     String msg = request.getParameter("msg");
 
                     if("invalid".equals(msg)){
@@ -61,8 +75,8 @@
                 </script>
                     
                     <%
-                     }
-                    else{
+                     }%>
+                <%  if("valid".equals(msg)){
                         %>
                         
                         <script type = "text/javascript">
@@ -73,23 +87,151 @@
                         <%
                     }
                  %>
+                 
+                 <%  if("neg".equals(msg)){
+                        %>
+                        
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Oops units can't be -ve!!!!");
+                            }, 500); 
+                </script>
+                        <%
+                    }
+                 %>
+                 
+                 <%  if("overflow".equals(msg)){
+                        %>
+                        
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Oops Required units not available !!!!");
+                            }, 500); 
+                </script>
+                        <%
+                    }
+                 %>
+                 
+                  <%  if("overflow".equals(msg)){
+                        %>
+                        
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Oops Required units not available !!!!");
+                            }, 500); 
+                </script>
+                        <%
+                    }
+                 %>
+                 
+                 <%  if("Accepted".equals(msg)){
+                        %>
+                        
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Units accepted successfully!!!!");
+                            }, 500); 
+                </script>
+                        <%
+                    }
+                 %>
+                 
+                 <%  if("Rejected".equals(msg)){
+                        %>
+                        
+                        <script type = "text/javascript">
+                            window.setTimeout(function(){
+                                alert("Units Rejected successfully!!!!");
+                            }, 500); 
+                </script>
+                        <%
+                    }
+                 %>
+                  <!-- Availablity Chart -->
+            <div class="chart">
+                <h3>Availablity Chart</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Group</th>
+                            <th>Amount</th>
+                        </tr>
+                        <%
+                            Connection con = MySqlConnector.getCon();
+                            Statement statement = con.createStatement() ;
+                            ResultSet rset = statement.executeQuery("select * from blood") ;
+                            while(rset.next()){ %>
+                         <tr>
+                             <td style="color:orangered"><%=rset.getString("bloodgroup")%></td>
+                            <td style="color:orangered"><%=rset.getString("units")%></td>
+                        </tr>
+                        <% }
+                        %>
+                        
+<!--                        <tr>
+                            <td>A-</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>B+</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>B-</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>O+</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>O-</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>AB+</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>AB-</td>
+                            <td>0</td>
+                        </tr>-->
+                    </table>
+                </div>
+            </div>
+
         <!-- Panel Area -->
         <div class="panel">
             <div class="panel-body">
                 <h3>Manage Requests</h3>
-                <form action="adminDashBusiness.jsp" methos="post">
+               
                 <div class="confirm">
+                     <%
+                            //Connection con = MySqlConnector.getCon();
+                            //Statement statement = con.createStatement() ;
+                            String stat = "Pending";
+                            ResultSet rs = statement.executeQuery("select * from bloodrequest where cur_status='"+stat+"'");
+                            while(rs.next()){ %>
                     <div class="request">
-                        <div class="btns">
-                            <span >Accept</span><!-- comment -->
-                            <span >Accept</span><!-- comment -->
-                            <span >Accept</span><!-- comment -->
-                            <button class="accept" value="Accept" name="Accept">Accept</button>
-                            <button class="reject">Reject</button>
+                        <div class="data">
+                            <span ><%=rs.getString("Bloodgroup")%></span><!-- comment -->
+                            <span ><%=rs.getString("units")%></span><!-- comment -->
+                            <span ><%=rs.getString("email")%></span><!-- comment -->
                         </div>
+                        <div class="btns"> 
+                            <a href="adminDashBusiness.jsp?msg=Accepted&id=<%=rs.getString("id")%>&unt=<%=rs.getString("units")%>&bldgrp=<%=rs.getString("Bloodgroup")%>">
+                                <button class="accept">Accept</button>
+                            </a>
+                            <a href="adminDashBusiness.jsp?msg=Rejected&id=<%=rs.getString("id")%>&unt=<%=rs.getString("units")%>&bldgrp=<%=rs.getString("Bloodgroup")%>">
+                                <button class="reject">Reject</button>
+                            </a>
+                        </div>
+                            
+                        
                     </div>
+                     <%}%>
                 </div>
-                    </form>
+                
 
                 <!-- <h3>Manage Stock</h3> -->
                 <h3>Manage Stock</h3>
@@ -116,6 +258,8 @@
             </div>
 
         </div>
+                <% }
+                %>
         <!-- Dashboard Area Finish -->
     </div>
         

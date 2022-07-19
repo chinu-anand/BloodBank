@@ -35,7 +35,9 @@
                     <a href="Register.jsp">
                         <li class="link-item">Register</li>
                     </a>
-                    <li class="link-item">About Us</li>
+                     <a href="about.jsp">
+                        <li class="link-item">About Us</li>
+                    </a>
                 </ul>
             </div>
         </nav>

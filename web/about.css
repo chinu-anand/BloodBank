@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+.navbar {
+    background-color: white;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    display: flex;
+    padding-left: 1.5rem;
+    justify-content: flex-start;
+    width: 25%;
+}
+
+.logo img {
+    width: 15%;
+    border-radius: 999px;
+}
+
+.logo h3 {
+    margin-left: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.navlinks {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    align-items: flex-end;
+}
+
+.link-items {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+}
+
+.link-items a {
+    color: black;
+    text-decoration: none;
+}
+
+.link-items a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.link-item {
+    padding: 0 1.5rem;
+}
+
+.link-item:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #F14430;
+    font-weight: bolder;
+}
+
+.intro {
+    position: relative;
+    background-color: white;
+    padding: 0.75rem;
+    width: 400px;
+    height: 150px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    left: 10vh;
+    top: 60vh;
+}
+
+.intro p {
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.intro span {
+    font-size: 28px;
+    color: #F14430;
+}
+
+.profile-area {
+    position: relative;
+    top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 999px;
+
+}
+
+.profile {
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+    padding: 25px 25px;
+    margin: 20px 30px;
+
+    border-radius: 20px;
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.top-row {
+    display: flex;
+    justify-self: center;
+}
+
+.bottom-row {
+    display: flex;
+    justify-self: center;
+}
+
+.pic{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 999px;
+
+    object-fit: cover;
+}
+
+.profile p{
+    padding-top: 5px;
+}
+
+.name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.roll{
+    font-size: 14px;
+}
+
+.work{
+    font-style: italic;
+    font-size: 14px;
+    /* font-family: sans-serif; */
+    font-weight: lighter;
+}

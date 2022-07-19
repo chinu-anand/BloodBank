@@ -20,9 +20,11 @@
             String pass = request.getParameter("password");
             
             if(email.equals("admin@admin")&&pass.equals("admin")){
+                session.setAttribute("username", email);
                 response.sendRedirect("adminDash.jsp");
             }
-
+            else{
+           
                   //set attribute in session
             session.setAttribute("username", email);
             
@@ -35,15 +37,25 @@
                 ResultSet rs = pst.executeQuery(); 
                 
                 
-                if(rs.next()){
-
-                    response.sendRedirect("userDash.jsp");
+                int x=0;
+                while(rs.next()){
+                  x++;
                 }
+                
+                if(x==0){
+                int y=1/0;
+            }
+
+                response.sendRedirect("userDash.jsp");
+                
+                
+                
 
             }
             catch(Exception e){
                 response.sendRedirect("login.jsp?msg=invalid");
-            }            
+            } 
+            }
           %>
     </body>
 </html>

@@ -72,7 +72,7 @@
                         <input type="password" name="password" id="password" placeholder="Password">
                         <button class="submitBtn">Submit</button>
 
-                        <a href="#forgotPassword" class="forget">Forgot Password?</a>
+                        <!--<a href="#forgotPassword" class="forget">Forgot Password?</a>-->
                     </div>
                 </form>
             </div>

@@ -17,10 +17,10 @@
             String update = request.getParameter("update");
             String status = "Pending";
             
-            System.out.println(email);
-            System.out.println(bg);
-            System.out.println(update);
-            System.out.println(status);
+//            System.out.println(email);
+//            System.out.println(bg);
+//            System.out.println(update);
+//            System.out.println(status);
             
              try{
              
@@ -31,7 +31,7 @@
                 Connection con = MySqlConnector.getCon();
                 
                 
-                PreparedStatement pst = con.prepareStatement("insert into bloodrequest values(?,?,?,?)");
+                PreparedStatement pst = con.prepareStatement("insert into bloodrequest(email,Bloodgroup,units,cur_status) values(?,?,?,?)");
                 pst.setString(1,email);
                 pst.setString(2,bg);
                 pst.setString(3,update);
